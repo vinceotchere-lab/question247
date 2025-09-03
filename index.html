@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AS_352 Flashcard Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loading">Loading questions...</div>
+  <div id="error" class="error" style="display:none;"></div>
+
+  <header id="header" style="display:none;">
+    <div id="top-info">
+      <span id="scoreDisplay">Score: 0</span>
+      <span id="progressText">Progress: 0/0</span>
+    </div>
+    <div class="progress-container"><div id="progress-bar"></div></div>
+  </header>
+
+  <main id="main" style="display:none;">
+    <div id="card" class="card-box">
+      <div id="question"></div>
+      <div id="options"></div>
+      <div id="navigation">
+        <button id="prevBtn" aria-label="Previous question">Previous</button>
+        <button id="nextBtn" aria-label="Next question">Next</button>
+      </div>
+    </div>
+    <div id="summary" class="card-box" style="display:none;"></div>
+  </main>
+
+  <section id="fallback" class="card-box" style="display:none; margin-top:12px;">
+    <h3>Dataset Fallback (Paste JSON)</h3>
+    <p>If <code>dataset.json</code> won’t load, paste your array of questions here and click **Use This**.
+    It will save to your browser (LocalStorage) and the quiz will run.</p>
+    <textarea id="pastebox" style="width:100%; min-height:180px;"></textarea>
+    <div style="margin-top:8px;">
+      <button id="usePasted">Use This</button>
+      <button id="clearLocal">Clear Local Dataset</button>
+    </div>
+  </section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
